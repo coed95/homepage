@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
 
     entry: './src/index.js',
     plugins: [
@@ -42,4 +43,9 @@ module.exports = {
         ],
     },
 
+    devServer: {
+        static: path.resolve(__dirname, 'dist'),
+        port: 9000,
+        hot: true,
+    },
 };
